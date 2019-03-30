@@ -1,5 +1,5 @@
 <template>
-    <v-footer :fixed="fixed" app>
+    <v-footer :fixed="$store.state.default.fixed" app>
       <span>&copy; 2019</span>
     </v-footer>
 </template>

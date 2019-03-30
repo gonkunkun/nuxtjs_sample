@@ -1,18 +1,18 @@
 <template>
     <v-toolbar :clipped-left="clipped" fixed app>
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
+      <v-toolbar-side-icon @click="$store.commit('default/tglDrawer')" />
+      <v-btn icon @click.stop="$store.commit('default/tglMiniVariant')">
+        <v-icon>{{ `chevron_${$store.state.default.miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
+      <v-btn icon @click.stop="$store.commit('default/tglClipped')">
         <v-icon>web</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
+      <v-btn icon @click.stop="$store.commit('default/tglFixed')">
         <v-icon>remove</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="$store.state.title" />
+      <v-toolbar-title v-text="$store.state.default.title" />
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+      <v-btn icon @click.stop="$store.commit('default/tglRightDrawer')">
         <v-icon>menu</v-icon>
       </v-btn>
     </v-toolbar>
