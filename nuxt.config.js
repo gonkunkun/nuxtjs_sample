@@ -1,7 +1,18 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nuxtjs_sample/'
+  }
+} : {}
+
 export default {
+  ...routerBase,
+  router: {
+    base: '/nuxtjs_sample/'
+  },
+
   mode: 'spa',
 
   /*
@@ -22,10 +33,6 @@ export default {
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
       }
     ]
-  },
-
-  router: {
-    base: '/nuxtjs_sample/'
   },
 
   /*
