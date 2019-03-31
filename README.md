@@ -1,22 +1,6 @@
-# sample-app
+Webページを作成する際のテンプレート的なものが欲しかったので、作ってみました。
 
-> My splendiferous Nuxt.js project
+とはいうものの、nuxt.js + Vuetifyをインストールした際に生成される初期ページに含まれるヘッダーやフッターを分割しただけです。
+分割するにあたって、Vuexによる状態管理が必要となったため、合わせて導入してます。
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+GitHubからプロジェクトごと持ってくるなり、ソースコードを抜いてくるなり、良い感じで使ってください。
