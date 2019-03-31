@@ -69,6 +69,7 @@ export default {
         import: ['~assets/style/variables.styl']
       }
     },
+    publicPath: '/nuxtjs_sample/_nuxt/',
     /*
      ** You can extend webpack config here
      */
