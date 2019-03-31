@@ -9,10 +9,6 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 export default {
   ...routerBase,
-  router: {
-    base: '/nuxtjs_sample/'
-  },
-
   mode: 'spa',
 
   /*
@@ -26,7 +22,7 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/nuxtjs_sample/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href:
@@ -76,7 +72,6 @@ export default {
         import: ['~assets/style/variables.styl']
       }
     },
-    publicPath: '/nuxtjs_sample/_nuxt/',
     /*
      ** You can extend webpack config here
      */
