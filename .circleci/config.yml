@@ -37,7 +37,7 @@ jobs:
 # $ docker-compose up
 #
 
-workflows:
-  version: 2
-  test_and_analyse:
-    jobs: build
+# workflows:
+#   version: 2
+#   test_and_analyse:
+#     jobs: build
