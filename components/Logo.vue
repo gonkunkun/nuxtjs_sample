@@ -76,4 +76,10 @@
     left: 70px;
   }
 }
+
+/* @keyframes goright {
+  100% {
+    left: 70px;
+  }
+} */
 </style>
