@@ -6,24 +6,25 @@ jobs:
     working_directory: &wd ~/repo
     steps:
       - checkout
-      # - run:
-      #     name: cp env
-      #     command: cp frontend/.env.default frontend/.env && cp .env.default .env && cp api/src/.env.default api/src/.env
-      # - run:
-      #     name: docker-compose build
-      #     command: |
-      #       set -x
-      #       docker-compose build
-      # - run:
-      #     name: docker-compose run --rm api bundle install
-      #     command: |
-      #       set -x
-      #       docker-compose run --rm api bundle install
+      - run:
+          name: cp env
+          command: cp frontend/.env.default frontend/.env && cp .env.default .env && cp api/src/.env.default api/src/.env
+      - run:
+          name: docker-compose build
+          command: |
+            set -x
+            docker-compose build
+      - run:
+          name: docker-compose run --rm api bundle install
+          command: |
+            set -x
+            docker-compose run --rm api bundle install
       # - run:
       #     name: docker-compose up
       #     command: |
       #       set -x
       #       docker-compose up
+
   staticAnalysisApi:
     machine:
       image: *circleci_image
@@ -69,10 +70,13 @@ workflows:
   version: 2
   test_and_analyse:
     jobs:
-      - build
-      - test:
+      - &build build
+      - testApi:
           requires:
-            - build
+            - *build
       - staticAnalysisApi:
           requires:
-            - build
+            - *build
+      - staticAnalysisFrontend:
+          requires:
+            - *build
